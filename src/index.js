@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./stylesheets/index.css";
+import App from "./App";
+//import Mongoose from "mongoose";
+//import Express from 'express'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+/* const connectDB = async () => {
+  Mongoose.connect(
+    "mongodb+srv://john:2bRLK9GZX2jlaM0F@comp229-f2021.jlcqd.mongodb.net/list?retryWrites=true&w=majority"
+  );
+  const productSchema = new Mongoose.Schema({});
+  const product = Mongoose.model("books", productSchema);
+  const data = await product.find();
+  console.warn(data);
+  console.log("Connect to MongoDB");
+};
+connectDB();
+ */

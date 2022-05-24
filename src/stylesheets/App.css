@@ -1,0 +1,102 @@
+body * {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.logo {
+  font-family: "Lobster", cursive;
+  font-size: 40px;
+}
+
+a.logo.navbar-brand {
+  color: #2bbbad;
+}
+
+a.logo.navbar-brand:hover {
+  color: #2bbbad;
+}
+
+a.logo.navbar-brand:visited {
+  color: #2bbbad;
+}
+
+.centered {
+  height: 90vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userShield {
+  font-size: 200px;
+  color: #2bbbad;
+}
+
+a.nav-link {
+  color: #2bbbad;
+}
+
+a.nav-link:hover {
+  color: orange;
+}
+
+hr {
+  color: grey;
+}
+
+/* Full Screen */
+@media only screen and (min-width: 600px) {
+  .innercontent,
+  .heading {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 960px;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .heading {
+    padding-top: 25px;
+  }
+
+  .loginForm {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 480px;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .topnav {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+/* Mobile Screen */
+@media only screen and (max-width: 600px) {
+  .topnav {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .innercontent,
+  .heading {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .heading {
+    padding-top: 25px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .userShield {
+    font-size: 150px;
+  }
+}
