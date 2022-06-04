@@ -6,6 +6,8 @@ import Inventory from "../view/Inventory";
 import Cart from "../view/Cart";
 import Register from "../view/Register";
 import Login from "../view/Login";
+import MyAccount from "../view/MyAccount";
+import PrivateRoute from "./PrivateRoute";
 
 const RouteSwitch = () => {
   return (
@@ -13,11 +15,35 @@ const RouteSwitch = () => {
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
+          {/* Protected Routes */}
+          <Route
+            path="/myaccount"
+            element={
+              <PrivateRoute>
+                <MyAccount />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/inventory"
+            element={
+              <PrivateRoute>
+                <Inventory />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <PrivateRoute>
+                <Cart />
+              </PrivateRoute>
+            }
+          />
+
           <Route path="*" element={<h1>404 Not Found!</h1>} />
         </Routes>
       </BrowserRouter>

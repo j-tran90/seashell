@@ -1,9 +1,26 @@
-import React from "react";
+/*eslint-disable no-unused-vars*/
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { FaUserCircle, FaModx } from "react-icons/fa";
+import { useAuth } from "../contexts/AuthContext";
 
 function Navigation() {
+  const { currentUser, logout } = useAuth();
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  async function handleLogout() {
+    setError("");
+
+    try {
+      await logout();
+      navigate("/login", { replace: true });
+    } catch {
+      setError("Failed to logout");
+    }
+  }
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="white">
@@ -26,16 +43,40 @@ function Navigation() {
             <NavDropdown
               title={
                 <>
-                  <FaUserCircle style={{ fontSize: "30px" }} /> John
+                  <FaUserCircle style={{ fontSize: "30px" }} />{" "}
+                  {currentUser && currentUser.email}
                 </>
               }
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item href="#action/3.1">My Account</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Workspace</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Setting</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+              {!currentUser ? (
+                ""
+              ) : (
+                <>
+                  <NavDropdown.Item as={Link} to="/myaccount">
+                    My Account
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Workspace
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">
+                    Setting
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                </>
+              )}
+
+              <NavDropdown.Item>
+                {!currentUser ? (
+                  <NavDropdown.Item onClick={handleLogout}>
+                    Login
+                  </NavDropdown.Item>
+                ) : (
+                  <NavDropdown.Item onClick={handleLogout}>
+                    Logout
+                  </NavDropdown.Item>
+                )}
+              </NavDropdown.Item>
             </NavDropdown>
           </Navbar.Collapse>
         </Container>

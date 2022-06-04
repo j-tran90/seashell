@@ -1,10 +1,6 @@
-body * {
-  font-family: "Roboto Flex", sans-serif;
-}
-
 .logo {
-  font-family: "Lobster", cursive;
   font-size: 40px;
+  font-family: lobster, cursive;
 }
 
 a.logo.navbar-brand {
@@ -18,7 +14,6 @@ a.logo.navbar-brand:hover {
 a.logo.navbar-brand:visited {
   color: #2bbbad;
 }
-
 .centered {
   height: 90vh; /* Magic here */
   display: flex;
@@ -31,6 +26,10 @@ a.logo.navbar-brand:visited {
   color: #2bbbad;
 }
 
+a {
+  color: #2bbbad;
+}
+
 a.nav-link {
   color: #2bbbad;
 }
@@ -39,8 +38,17 @@ a.nav-link:hover {
   color: orange;
 }
 
-hr {
-  color: grey;
+button.btn.btn-primary {
+  background-color: #2bbbad;
+  outline: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.card {
+  background-color: #ececec;
 }
 
 /* Full Screen */

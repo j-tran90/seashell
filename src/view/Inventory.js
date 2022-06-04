@@ -1,12 +1,14 @@
 import React from "react";
-import "../stylesheets/App.css";
 import { Table } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContext";
 
 function Inventory() {
+  const { currentUser } = useAuth();
   return (
     <>
       <div className="heading">
-        <h1>Inventory</h1>
+        <h1>Inventory -</h1>
+        <h4> {currentUser && currentUser.email}</h4>
       </div>
       <div className="innercontent">
         <Table striped bordered hover>

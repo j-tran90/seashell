@@ -1,11 +1,15 @@
 import React from "react";
-import "../stylesheets/App.css";
+import { Container } from "react-bootstrap";
 
 function Cart() {
   return (
-    <div className="heading">
-      <h1>Cart</h1>
-    </div>
+    <>
+      <Container>
+        <div className="heading">
+          <h1>Cart</h1>
+        </div>
+      </Container>
+    </>
   );
 }
 

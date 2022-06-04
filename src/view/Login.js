@@ -1,52 +1,97 @@
-import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+import React, { useRef, useState } from "react";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBInput,
+  MDBBtn,
+  MDBCol,
+  MDBCheckbox,
+} from "mdb-react-ui-kit";
 import { RiShieldUserLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import { Container, Nav } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Nav, Alert, Form } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContext";
+import Wave from "../components/Wave";
 
 const Login = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      navigate("/myaccount", { replace: true });
+    } catch {
+      setError("Failed to login");
+    }
+    setLoading(false);
+  }
   return (
-    <div className="loginForm centered">
-      <MDBContainer>
-        <MDBRow>
-          <form>
-            <p className="text-center">
-              <RiShieldUserLine className="userShield" />
-            </p>
-            <div className="grey-text">
-              <MDBInput
-                label="Type your email"
-                icon="envelope"
-                group
-                type="email"
-                validate
-                error="wrong"
-                success="right"
-                style={{ margin: "auto" }}
-              />
-              <MDBInput
-                label="Type your password"
-                icon="lock"
-                group
-                type="password"
-                validate
-                style={{ margin: "auto" }}
-              />
+    <>
+      <div className="loginForm centered">
+        <MDBContainer>
+          <MDBRow>
+            <Form onSubmit={handleSubmit}>
+              <p className="text-center">
+                <RiShieldUserLine className="userShield" />
+              </p>
+              {error && <Alert variant="danger">{error}</Alert>}
+              <div className="grey-text">
+                <MDBInput
+                  className="mt-3"
+                  id="id"
+                  label="Email"
+                  icon="lock"
+                  group
+                  type="email"
+                  inputRef={emailRef}
+                  required
+                />
+                <MDBInput
+                  className="mt-3"
+                  id="password"
+                  label="Password"
+                  icon="lock"
+                  group
+                  type="password"
+                  inputRef={passwordRef}
+                  required
+                />
+              </div>
+              <div className="text-center mt-4">
+                <MDBBtn disabled={loading} type="submit">
+                  Login
+                </MDBBtn>
+              </div>
+              <MDBRow className="mt-4">
+                <MDBCol className="d-flex justify-content-center">
+                  <MDBCheckbox id="rememberMe" label="Remember me" />
+                </MDBCol>
+                <MDBCol>
+                  <a href="#!">Forgot password?</a>
+                </MDBCol>
+              </MDBRow>
+            </Form>
+            <hr className="mt-4" style={{ maxWidth: "480px" }} />
+            <div className="text-center mt-2">
+              Don't have an account?
+              <Nav.Link as={Link} to="/register">
+                Register
+              </Nav.Link>
             </div>
-            <div className="text-center">
-              <MDBBtn>Login</MDBBtn>
-            </div>
-          </form>
-          <hr style={{ marginTop: "25px", maxWidth: "480px" }} />
-          <div className="text-center">
-            Don't have an account?
-            <Nav.Link as={Link} to="/register">
-              Register
-            </Nav.Link>
-          </div>
-        </MDBRow>
-      </MDBContainer>
-    </div>
+          </MDBRow>
+        </MDBContainer>
+      </div>
+      <Wave />
+    </>
   );
 };
 

@@ -1,9 +1,25 @@
 import React from "react";
-import "../stylesheets/App.css";
-import Login from "./Login";
+import { Link } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBBtn } from "mdb-react-ui-kit";
+import { useAuth } from "../contexts/AuthContext";
 
-function Home() {
-  return <Login />;
+export default function Home() {
+  const { currentUser } = useAuth();
+
+  return (
+    <>
+      <div className="centered">
+        <MDBContainer>
+          <MDBRow>
+            <div className="text-animation text-center">Welcome</div>
+          </MDBRow>
+          <MDBRow className="text-center">
+            <Link to="/register">
+              {!currentUser ? <MDBBtn>Sign Up</MDBBtn> : ""}
+            </Link>
+          </MDBRow>
+        </MDBContainer>
+      </div>
+    </>
+  );
 }
-
-export default Home;

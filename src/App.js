@@ -1,13 +1,19 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "mdbreact/dist/css/mdb.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import "./stylesheets/animation/Text.scss";
+import "./stylesheets/animation/Wave.css";
+import "./stylesheets/Index.css";
 import "./stylesheets/App.css";
 import RouteSwitch from "./components/RouteSwitch";
+import AuthProvider from "./contexts/AuthContext";
 
 function App() {
   return (
     <>
-      <RouteSwitch />
+      <AuthProvider>
+        <RouteSwitch />
+      </AuthProvider>
     </>
   );
 }
