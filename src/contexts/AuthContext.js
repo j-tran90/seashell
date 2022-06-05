@@ -20,7 +20,7 @@ export default function AuthProvider({ children }) {
         //     displayName: document.getElementById("name").value,
         //   });
         // })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         })
     );

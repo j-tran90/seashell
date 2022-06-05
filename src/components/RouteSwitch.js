@@ -8,6 +8,7 @@ import Register from "../view/Register";
 import Login from "../view/Login";
 import MyAccount from "../view/MyAccount";
 import PrivateRoute from "./PrivateRoute";
+import ChatRoom from "../view/ChatRoom";
 
 const RouteSwitch = () => {
   return (
@@ -40,6 +41,14 @@ const RouteSwitch = () => {
             element={
               <PrivateRoute>
                 <Cart />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/chatroom"
+            element={
+              <PrivateRoute>
+                <ChatRoom />
               </PrivateRoute>
             }
           />

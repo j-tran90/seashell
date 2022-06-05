@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBBtn } from "mdb-react-ui-kit";
 import { useAuth } from "../contexts/AuthContext";
+import Wave from "../components/Wave";
 
 export default function Home() {
   const { currentUser } = useAuth();
@@ -20,6 +21,7 @@ export default function Home() {
           </MDBRow>
         </MDBContainer>
       </div>
+      <Wave />
     </>
   );
 }

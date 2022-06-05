@@ -32,12 +32,17 @@ function Navigation() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto"></Nav>
             <Nav>
-              <Nav.Link as={Link} to="/inventory">
-                Inventory
+              <Nav.Link as={Link} to="/shop" disabled>
+                Browse Shop
               </Nav.Link>
               <Nav.Link as={Link} to="/cart">
                 Cart
               </Nav.Link>
+              {!currentUser ? null : (
+                <Nav.Link as={Link} to="/chatroom">
+                  Chat Room
+                </Nav.Link>
+              )}
             </Nav>
             <hr />
             <NavDropdown
@@ -49,15 +54,13 @@ function Navigation() {
               }
               id="collasible-nav-dropdown"
             >
-              {!currentUser ? (
-                ""
-              ) : (
+              {!currentUser ? null : (
                 <>
                   <NavDropdown.Item as={Link} to="/myaccount">
                     My Account
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Workspace
+                  <NavDropdown.Item as={Link} to="/inventory">
+                    Inventory
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">
                     Setting
