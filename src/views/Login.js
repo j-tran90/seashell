@@ -67,7 +67,7 @@ const Login = () => {
                 />
               </div>
               <div className="text-center mt-4">
-                <MDBBtn disabled={loading} type="submit">
+                <MDBBtn className="w-50" disabled={loading} type="submit">
                   Login
                 </MDBBtn>
               </div>
@@ -83,9 +83,11 @@ const Login = () => {
             <hr className="mt-4" style={{ maxWidth: "480px" }} />
             <div className="text-center mt-2">
               Don't have an account?
-              <Nav.Link as={Link} to="/register">
-                Register
-              </Nav.Link>
+              <div>
+                <Link as={Link} to="/register">
+                  Register
+                </Link>
+              </div>
             </div>
           </MDBRow>
         </MDBContainer>

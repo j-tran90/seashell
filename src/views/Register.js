@@ -101,7 +101,7 @@ export default function Register() {
                   style={{ margin: "auto" }}
                 />
                 <div className="text-center mt-4">
-                  <MDBBtn disabled={loading} type="submit">
+                  <MDBBtn className="w-50" disabled={loading} type="submit">
                     Submit
                   </MDBBtn>
                 </div>
@@ -110,9 +110,11 @@ export default function Register() {
             <hr className="mt-4" />
             <div className="text-center mt-2">
               Already have an account?
-              <Nav.Link as={Link} to="/login">
-                Login
-              </Nav.Link>
+              <div>
+                <Link as={Link} to="/login">
+                  Login
+                </Link>
+              </div>
             </div>
           </MDBRow>
         </MDBContainer>

@@ -15,7 +15,7 @@ a.logo.navbar-brand:visited {
   color: #2bbbad;
 }
 .centered {
-  height: 90vh; /* Magic here */
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,10 +23,6 @@ a.logo.navbar-brand:visited {
 
 .userShield {
   font-size: 200px;
-  color: #2bbbad;
-}
-
-a {
   color: #2bbbad;
 }
 

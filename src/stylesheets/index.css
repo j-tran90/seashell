@@ -9,3 +9,11 @@ h1 {
 hr {
   color: grey;
 }
+
+a {
+  color: #2bbbad;
+}
+
+a:hover {
+  color: orange;
+}
