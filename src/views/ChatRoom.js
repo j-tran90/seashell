@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import ChatMessage from "../components/ChatMessage";
 import { MDBBtn, MDBContainer, MDBRow } from "mdb-react-ui-kit";
-import { auth, firestore } from "../config/firebase";
+import { auth, firestore } from "../config/Firebase";
 import firebase from "firebase/compat/app";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import "../stylesheets/Chatbox.css";

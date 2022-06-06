@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../view/Home";
+import Home from "../views/Home";
 import Navigation from "./Navigation";
-import Inventory from "../view/Inventory";
-import Cart from "../view/Cart";
-import Register from "../view/Register";
-import Login from "../view/Login";
-import MyAccount from "../view/MyAccount";
+import Inventory from "../views/Inventory";
+import Cart from "../views/Cart";
+import Register from "../views/Register";
+import Login from "../views/Login";
+import MyAccount from "../views/MyAccount";
 import PrivateRoute from "./PrivateRoute";
-import ChatRoom from "../view/ChatRoom";
+import ChatRoom from "../views/ChatRoom";
 
 const RouteSwitch = () => {
   return (
