@@ -16,7 +16,7 @@ export default function Home() {
           </MDBRow>
           <MDBRow className="text-center">
             <Link to="/register">
-              {!currentUser ? <MDBBtn>Sign Up</MDBBtn> : ""}
+              {!currentUser ? <MDBBtn className="w-50">Sign Up</MDBBtn> : ""}
             </Link>
           </MDBRow>
         </MDBContainer>
