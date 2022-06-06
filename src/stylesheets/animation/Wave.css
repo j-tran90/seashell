@@ -39,33 +39,16 @@ body {
   opacity: 1;
 }
 
-/* @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .ocean {
-    height: 15%;
+    height: 0%;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
     background: #015871;
   }
-
-  .wave {
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
-      repeat-x;
-    position: absolute;
-    top: -50px;
-    width: 6400px;
-    height: 100px;
-    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-    transform: translate3d(0, 0, 0);
-  }
-  .wave:nth-of-type(2) {
-    top: -50px;
-    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
-      swell 7s ease -1.25s infinite;
-    opacity: 1;
-  }
-} */
+}
 
 .parallax > use {
   animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
