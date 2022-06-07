@@ -16,6 +16,7 @@ export default function AuthProvider({ children }) {
     return (
       auth
         .createUserWithEmailAndPassword(email, password)
+        // TO FIX //
         // .then(function(result) {
         //   return result.user.updateProfile({
         //     displayName: document.getElementById("name").value,
@@ -35,6 +36,7 @@ export default function AuthProvider({ children }) {
     return auth.signOut();
   }
 
+  // TO FIX //
   function deleteAccount() {
     const auth = getAuth();
     const user = auth.currentUser;
