@@ -16,7 +16,7 @@ import Wave from "../components/Wave";
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -80,6 +80,10 @@ const Login = () => {
                 </MDBCol>
               </MDBRow>
             </Form>
+            <hr className="mt-4" style={{ maxWidth: "480px" }} />
+            <div className="text-center">
+              <MDBBtn onClick={googleLogin}>G</MDBBtn>
+            </div>
             <hr className="mt-4" style={{ maxWidth: "480px" }} />
             <div className="text-center mt-2">
               Don't have an account?
