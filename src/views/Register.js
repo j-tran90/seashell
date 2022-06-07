@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { MDBContainer, MDBRow, MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import { RiShieldCrossLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
-import { Nav, Alert, Form } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function Register() {

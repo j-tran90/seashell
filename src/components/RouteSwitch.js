@@ -9,15 +9,25 @@ import Login from "../views/Login";
 import MyAccount from "../views/MyAccount";
 import PrivateRoute from "./PrivateRoute";
 import ChatRoom from "../views/ChatRoom";
+import { useAuth } from "../contexts/AuthContext";
 
 const RouteSwitch = () => {
+  const { currentUser } = useAuth();
   return (
     <>
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          {!currentUser ? (
+            <Route path="/login" element={<Login />} />
+          ) : (
+            <Route path="/login" element={<MyAccount />} />
+          )}
+          {!currentUser ? (
+            <Route path="/register" element={<Register />} />
+          ) : (
+            <Route path="/register" element={<MyAccount />} />
+          )}
           <Route path="/" element={<Home />} />
           {/* Protected Routes */}
           <Route

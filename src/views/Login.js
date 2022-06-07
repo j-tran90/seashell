@@ -9,7 +9,7 @@ import {
 } from "mdb-react-ui-kit";
 import { RiShieldUserLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
-import { Nav, Alert, Form } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import Wave from "../components/Wave";
 

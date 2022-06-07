@@ -62,9 +62,6 @@ function Navigation() {
                   <NavDropdown.Item as={Link} to="/inventory">
                     Inventory
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Setting
-                  </NavDropdown.Item>
                   <NavDropdown.Divider />
                 </>
               )}
