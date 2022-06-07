@@ -2,7 +2,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { RiShieldUserLine } from "react-icons/ri";
 import { Button, Accordion, Form } from "react-bootstrap";
 import {
   MDBContainer,
@@ -18,6 +17,8 @@ export default function MyAccount() {
   const navigate = useNavigate();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  //TO FIX
+  const creationDate = useAuth().currentUser?.metadata.creationDate;
 
   async function handleLogout() {
     setError("");
@@ -43,14 +44,19 @@ export default function MyAccount() {
             <MDBCard className="mt-4">
               <MDBCardBody>
                 <h2 className="text-center mb-4">
-                  <RiShieldUserLine />
+                  <img src={currentUser.photoURL} />
                   Profile
                 </h2>
-                <h4>Name:</h4>
+                <h4>Name: {currentUser && currentUser.displayName}</h4>
                 <h4>Email: {currentUser && currentUser.email}</h4>
-                <h4>Account Created:</h4>
+                <h4>Account Created:{creationDate}</h4>
                 <MDBContainer className="text-center">
-                  <Button className="w-100 mt-4" variant="info" onClick="#!">
+                  <Button
+                    className="w-100 mt-4"
+                    variant="info"
+                    onClick="#!"
+                    disabled
+                  >
                     Update Info
                   </Button>
                 </MDBContainer>
@@ -87,7 +93,12 @@ export default function MyAccount() {
                         style={{ margin: "auto" }}
                       />
                       <MDBContainer className="mt-3 text-center">
-                        <Button className="me-3 w-50" onClick="" type="submit">
+                        <Button
+                          className="me-3 w-50"
+                          onClick=""
+                          type="submit"
+                          disabled
+                        >
                           Update
                         </Button>
                         <Button
@@ -95,6 +106,7 @@ export default function MyAccount() {
                           onClick=""
                           variant="warning"
                           type="submit"
+                          disabled
                         >
                           Cancel
                         </Button>
@@ -122,6 +134,11 @@ export default function MyAccount() {
                 </Accordion.Item>
               </Accordion>
             </MDBCard>
+            <MDBContainer className="text-center mt-3">
+              <Button className="w-100" onClick={handleLogout}>
+                Logout
+              </Button>
+            </MDBContainer>
           </MDBContainer>
         </MDBContainer>
       </div>

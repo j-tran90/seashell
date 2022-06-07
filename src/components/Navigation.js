@@ -48,8 +48,13 @@ function Navigation() {
             <NavDropdown
               title={
                 <>
-                  <FaUserCircle style={{ fontSize: "30px" }} />{" "}
-                  {currentUser && currentUser.email}
+                  {!currentUser ? (
+                    <FaUserCircle style={{ fontSize: "40px" }} />
+                  ) : (
+                    <img src={currentUser.photoURL} />
+                  )}
+
+                  {currentUser && currentUser.displayName}
                 </>
               }
               id="collasible-nav-dropdown"

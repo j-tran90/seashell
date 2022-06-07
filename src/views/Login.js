@@ -6,8 +6,10 @@ import {
   MDBBtn,
   MDBCol,
   MDBCheckbox,
+  MDBTable,
 } from "mdb-react-ui-kit";
 import { RiShieldUserLine } from "react-icons/ri";
+import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
@@ -82,7 +84,11 @@ const Login = () => {
             </Form>
             <hr className="mt-4" style={{ maxWidth: "480px" }} />
             <div className="text-center">
-              <MDBBtn onClick={googleLogin}>G</MDBBtn>
+              <FcGoogle
+                type="button"
+                onClick={googleLogin}
+                style={{ fontSize: "40px" }}
+              />
             </div>
             <hr className="mt-4" style={{ maxWidth: "480px" }} />
             <div className="text-center mt-2">

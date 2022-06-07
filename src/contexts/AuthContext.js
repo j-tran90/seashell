@@ -19,19 +19,16 @@ export default function AuthProvider({ children }) {
   const provider = new GoogleAuthProvider();
 
   function register(email, password) {
-    return (
-      auth
-        .createUserWithEmailAndPassword(email, password)
-        // TO FIX //
-        .then(function (result) {
-          return result.user.updateProfile({
-            displayName: document.getElementById("name").value,
-          });
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
-    );
+    return auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(function (result) {
+        return result.user.updateProfile({
+          displayName: document.getElementById("name").value,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   function login(email, password) {
@@ -51,12 +48,11 @@ export default function AuthProvider({ children }) {
     return auth.signOut();
   }
 
-  // TO FIX //
   function deleteAccount() {
     const auth2 = getAuth();
     const user = auth2.currentUser;
 
-    deleteUser(user)
+    deleteUser(user || currentUser)
       .then(() => {})
       .catch((error) => {
         ("Deletion Failed");
