@@ -1,13 +1,23 @@
 /*eslint-disable no-unused-vars*/
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Button, Card } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
+import { RiShieldUserLine } from "react-icons/ri";
+import { Button, Accordion, Form } from "react-bootstrap";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBInput,
+  MDBCard,
+  MDBCardBody,
+} from "mdb-react-ui-kit";
 
 export default function MyAccount() {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logout, deleteAccount } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
 
   async function handleLogout() {
     setError("");
@@ -22,25 +32,98 @@ export default function MyAccount() {
 
   return (
     <>
-      <h2 className="text-center mt-4">
-        Hi! {currentUser && currentUser.email}
-      </h2>
-
       <div className="innercontent">
-        <Container>
-          <Card>
-            <Card.Body>
-              <h2 className="text-center mt-4">Update Password</h2>
-            </Card.Body>
-            <Card.Body className="mt-2">
-              <h2 className="text-center">Settings</h2>
-            </Card.Body>
-          </Card>
-
-          <Button className="w-100 mt-4" onClick={handleLogout}>
-            Logout
-          </Button>
-        </Container>
+        <MDBContainer>
+          <MDBRow>
+            <div className="heading">
+              <h1>My Account </h1>
+            </div>
+          </MDBRow>
+          <MDBContainer className="loginForm">
+            <MDBCard className="mt-4">
+              <MDBCardBody>
+                <h2 className="text-center mb-4">
+                  <RiShieldUserLine />
+                  Profile
+                </h2>
+                <h4>Name:</h4>
+                <h4>Email: {currentUser && currentUser.email}</h4>
+                <h4>Account Created:</h4>
+                <MDBContainer className="text-center">
+                  <Button className="w-100 mt-4" variant="info" onClick="#!">
+                    Update Info
+                  </Button>
+                </MDBContainer>
+              </MDBCardBody>
+            </MDBCard>
+            <MDBCard className="mt-2">
+              <Accordion>
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>
+                    <div className="text-center">Update Password</div>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <Form>
+                      <MDBInput
+                        className="mt-3"
+                        id="password"
+                        label="New Password"
+                        icon="lock"
+                        group
+                        type="password"
+                        inputRef={passwordRef}
+                        required
+                        style={{ margin: "auto" }}
+                      />
+                      <MDBInput
+                        className="mt-3"
+                        id="password-confirm"
+                        label="Confirm New Password"
+                        icon="lock"
+                        group
+                        type="password"
+                        inputRef={passwordConfirmRef}
+                        required
+                        style={{ margin: "auto" }}
+                      />
+                      <MDBContainer className="mt-3 text-center">
+                        <Button className="me-3 w-50" onClick="" type="submit">
+                          Update
+                        </Button>
+                        <Button
+                          className=""
+                          onClick=""
+                          variant="warning"
+                          type="submit"
+                        >
+                          Cancel
+                        </Button>
+                      </MDBContainer>
+                    </Form>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </MDBCard>
+            <MDBCard className="mt-2">
+              <Accordion>
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>Settings</Accordion.Header>
+                  <Accordion.Body>
+                    <MDBContainer className="text-center">
+                      <Button
+                        className=""
+                        variant="danger"
+                        onClick={deleteAccount}
+                      >
+                        Delete
+                      </Button>
+                    </MDBContainer>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </MDBCard>
+          </MDBContainer>
+        </MDBContainer>
       </div>
     </>
   );

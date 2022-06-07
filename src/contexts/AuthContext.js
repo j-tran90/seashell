@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../config/Firebase";
+import { getAuth, deleteUser } from "firebase/auth";
 
 const AuthContext = React.createContext();
 
@@ -34,6 +35,17 @@ export default function AuthProvider({ children }) {
     return auth.signOut();
   }
 
+  function deleteAccount() {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    deleteUser(user)
+      .then(() => {})
+      .catch((error) => {
+        ("Deletion Failed");
+      });
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -48,6 +60,7 @@ export default function AuthProvider({ children }) {
     login,
     register,
     logout,
+    deleteAccount,
   };
 
   return (
