@@ -6,7 +6,6 @@ import {
   MDBBtn,
   MDBCol,
   MDBCheckbox,
-  MDBTable,
 } from "mdb-react-ui-kit";
 import { RiShieldUserLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
@@ -101,8 +100,10 @@ const Login = () => {
             </div>
           </MDBRow>
         </MDBContainer>
+        <>
+          <Wave />
+        </>
       </div>
-      <Wave />
     </>
   );
 };

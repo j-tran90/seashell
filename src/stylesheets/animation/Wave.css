@@ -43,10 +43,16 @@ body {
   .ocean {
     height: 0%;
     width: 100%;
-    position: absolute;
-    bottom: -50px;
+    position: absolute !important;
+    bottom: -80px;
     left: 0;
     background: #015871;
+  }
+}
+
+@media only screen and (max-width: 375px) and (max-height: 740px) {
+  .ocean {
+    display: none;
   }
 }
 
