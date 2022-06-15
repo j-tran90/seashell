@@ -7,8 +7,10 @@ import {
   MDBTableBody,
 } from "mdb-react-ui-kit";
 import React from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 function Inventory() {
+  const { currentUser } = useAuth();
   return (
     <>
       <div className="innercontent">
@@ -42,7 +44,7 @@ function Inventory() {
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>Jacob</td>
+                  <td>{currentUser && currentUser.displayName}</td>
                   <td>Thornton</td>
                   <td>@fat</td>
                 </tr>
