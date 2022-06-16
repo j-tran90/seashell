@@ -9,6 +9,7 @@ import Login from "../views/Login";
 import MyAccount from "../views/MyAccount";
 import PrivateRoute from "./PrivateRoute";
 import ChatRoom from "../views/ChatRoom";
+import Upload from "../views/Upload";
 import { useAuth } from "../contexts/AuthContext";
 
 const RouteSwitch = () => {
@@ -59,6 +60,14 @@ const RouteSwitch = () => {
             element={
               <PrivateRoute>
                 <ChatRoom />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/upload"
+            element={
+              <PrivateRoute>
+                <Upload />
               </PrivateRoute>
             }
           />

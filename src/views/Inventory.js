@@ -1,13 +1,16 @@
 import {
   MDBContainer,
   MDBRow,
-  MDBBtn,
   MDBTable,
   MDBTableHead,
   MDBTableBody,
 } from "mdb-react-ui-kit";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
+import { BiAddToQueue } from "react-icons/bi";
+import { VscOpenPreview } from "react-icons/vsc";
+import UploadForm from "../components/UploadForm";
 
 function Inventory() {
   const { currentUser } = useAuth();
@@ -17,11 +20,19 @@ function Inventory() {
         <MDBContainer>
           <MDBRow>
             <div className="heading">
-              <h1>Inventory </h1>
+              <h1>{currentUser && currentUser.displayName}'s Inventory </h1>
             </div>
           </MDBRow>
-          <MDBRow className="mb-4 mt-4 w-50">
-            <MDBBtn>Manage Inventory</MDBBtn>
+          <MDBRow className="mb-4 mt-4">
+            {/* <Button className="w-25">
+              Add Item <BiAddToQueue />
+            </Button> */}
+
+            {/* <Button className="w-25 ms-3">
+              Preview Vendor <VscOpenPreview />
+            </Button> */}
+
+            <UploadForm />
           </MDBRow>
           <MDBRow>
             <MDBTable striped hover>
