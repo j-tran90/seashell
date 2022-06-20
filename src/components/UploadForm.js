@@ -15,7 +15,7 @@ export default function UploadForm() {
       setError("");
     } else {
       setFile(null);
-      setError("File type not supported (select: png or jpeg)");
+      setError("File type not supported (only png or jpeg)");
     }
   };
 

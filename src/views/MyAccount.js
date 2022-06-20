@@ -10,6 +10,7 @@ import {
   MDBCard,
   MDBCardBody,
 } from "mdb-react-ui-kit";
+import { FaEdit } from "react-icons/fa";
 
 export default function MyAccount() {
   const { currentUser, logout, deleteAccount } = useAuth();

@@ -14,24 +14,10 @@ a.logo.navbar-brand:hover {
 a.logo.navbar-brand:visited {
   color: #2bbbad;
 }
-.centered {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .userShield {
   font-size: 200px;
   color: #2bbbad;
-}
-
-a.nav-link {
-  color: #2bbbad;
-}
-
-a.nav-link:hover {
-  color: orange;
 }
 
 button.btn.btn-primary {

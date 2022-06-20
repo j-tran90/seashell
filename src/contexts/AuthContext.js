@@ -23,7 +23,11 @@ export default function AuthProvider({ children }) {
       .createUserWithEmailAndPassword(email, password)
       .then(function (result) {
         return result.user.updateProfile({
-          displayName: document.getElementById("name").value,
+          displayName: document
+            .getElementById("name")
+            .value.replace(/(^\w{1})|(\s+\w{1})/g, (value) =>
+              value.toUpperCase()
+            ),
         });
       })
       .catch(function (error) {

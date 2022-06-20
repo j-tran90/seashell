@@ -17,3 +17,18 @@ a {
 a:hover {
   color: orange;
 }
+
+a.nav-link {
+  color: #2bbbad;
+}
+
+a.nav-link:hover {
+  color: orange;
+}
+
+.centered {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

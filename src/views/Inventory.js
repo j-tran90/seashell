@@ -5,7 +5,7 @@ import {
   MDBTableHead,
   MDBTableBody,
 } from "mdb-react-ui-kit";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { BiAddToQueue } from "react-icons/bi";
@@ -14,6 +14,8 @@ import UploadForm from "../components/UploadForm";
 
 function Inventory() {
   const { currentUser } = useAuth();
+  const [file, setFile] = useState(null);
+  const [error, setError] = useState(null);
   return (
     <>
       <div className="innercontent">
@@ -41,15 +43,15 @@ function Inventory() {
                   <th scope="col" className="w-10">
                     #
                   </th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Created</th>
+                  <th scope="col">URL</th>
                 </tr>
               </MDBTableHead>
               <MDBTableBody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Mark</td>
+                  <td>{file && file.name}</td>
                   <td>Otto</td>
                   <td>@mdo</td>
                 </tr>
