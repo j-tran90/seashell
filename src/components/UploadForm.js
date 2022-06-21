@@ -23,7 +23,7 @@ export default function UploadForm() {
     <form>
       <label>
         <input type="file" onChange={changeHandler} />
-        <span>Add</span>
+        Add
       </label>
 
       <div className="output">

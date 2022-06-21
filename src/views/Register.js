@@ -33,17 +33,6 @@ export default function Register() {
     setLoading(false);
   }
 
-  /**TO DO */
-  // if (currentUser !== null) {
-  //   try {
-  //     setError("");
-  //     setLoading(true);
-  //     navigate("/myAccount", { replace: true });
-  //   } catch {
-  //     setError("Already a user");
-  //   }
-  // }
-
   return (
     <>
       <div className="loginForm centered">
