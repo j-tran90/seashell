@@ -26,16 +26,16 @@ function Navigation() {
       <Navbar collapseOnSelect expand="lg" bg="white">
         <Container>
           <Navbar.Brand className="logo" as={Link} to="/">
-            <FaModx /> MarketShell
+            <FaModx /> SeaShell
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto"></Nav>
             <Nav>
-              <Nav.Link as={Link} to="/shop" disabled>
+              <Nav.Link as={Link} to="/shop" hidden>
                 Browse Shop
               </Nav.Link>
-              <Nav.Link as={Link} to="/cart">
+              <Nav.Link as={Link} to="/cart" hidden>
                 Cart
               </Nav.Link>
               {!currentUser ? null : (

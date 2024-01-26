@@ -9,16 +9,19 @@ export default function Home() {
 
   return (
     <>
-      <div className="centered">
-        <div className="text-animation text-center">Welcome</div>
-        {/* <MDBContainer>
-          <MDBRow></MDBRow>
-          <MDBRow className="text-center">
-            <Link to="/register">
-              {!currentUser ? <MDBBtn className="w-50">Sign Up</MDBBtn> : ""}
-            </Link>
-          </MDBRow>
-        </MDBContainer> */}
+      <div className="">
+        <div className="text-animation text-center display-1">Hello</div>
+      </div>
+      <div className="text-center">
+        <Link to="/register">
+          {!currentUser ? (
+            <button className="btn btn-primary" type="button">
+              Sign Up
+            </button>
+          ) : (
+            ""
+          )}
+        </Link>
       </div>
       <Wave />
     </>

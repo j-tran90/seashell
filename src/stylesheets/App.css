@@ -27,6 +27,7 @@ button.btn.btn-primary {
 
 button.btn.btn-link {
   color: #2bbbad;
+  outline: none;
 }
 
 button.btn.btn-link:hover {

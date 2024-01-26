@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:900");
 
 .text-animation {
+  margin-top: 20vh;
   font-family: "Montserrat", sans-serif;
-  font-size: 17vh;
+  font-size: 500px;
   letter-spacing: 1vw;
   color: white;
   background: url("https://i.pinimg.com/originals/9f/9c/c5/9f9cc5217bb04790e5fb852b665ca2ff.jpg");
@@ -24,11 +25,11 @@
     }
   }
   @media only screen and (min-width: 601px) and (max-width: 1400px) {
-    font-size: 15vw;
+    font-size: 270px;
     letter-spacing: 1vw;
   }
   @media only screen and (max-width: 600px) {
-    font-size: 8vh;
+    font-size: 120px;
     letter-spacing: 1vw;
     @keyframes shine {
       from {

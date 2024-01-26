@@ -2,6 +2,10 @@ body * {
   font-family: "Roboto Flex", sans-serif;
 }
 
+* {
+  border: 0px solid red;
+}
+
 h1 {
   color: #2bbbad;
 }
@@ -35,8 +39,9 @@ a.nav-link:hover {
 
 label input {
   height: 0;
-  width: 0;
+
   opacity: 0;
+  border: 1px solid red;
 }
 
 label {
