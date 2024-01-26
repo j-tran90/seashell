@@ -1,0 +1,47 @@
+body * {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+h1 {
+  color: #2bbbad;
+}
+
+hr {
+  color: grey;
+}
+
+a {
+  color: #2bbbad;
+}
+
+a:hover {
+  color: orange;
+}
+
+a.nav-link {
+  color: #2bbbad;
+}
+
+a.nav-link:hover {
+  color: orange;
+}
+
+.centered {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+label {
+  color: #2bbbad;
+}
+label:hover {
+  color: orange;
+}
