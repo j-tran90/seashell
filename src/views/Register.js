@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { MDBContainer, MDBRow, MDBInput, MDBBtn } from "mdb-react-ui-kit";
+
 import { RiShieldCrossLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
@@ -36,7 +36,7 @@ export default function Register() {
   return (
     <>
       <div className="loginForm centered">
-        <MDBContainer>
+        {/* <MDBContainer>
           <MDBRow>
             <Form onSubmit={handleSubmit}>
               <p className="text-center">
@@ -106,7 +106,7 @@ export default function Register() {
               </div>
             </div>
           </MDBRow>
-        </MDBContainer>
+        </MDBContainer> */}
       </div>
     </>
   );

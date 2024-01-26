@@ -1,10 +1,3 @@
-import {
-  MDBContainer,
-  MDBRow,
-  MDBTable,
-  MDBTableHead,
-  MDBTableBody,
-} from "mdb-react-ui-kit";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
@@ -19,20 +12,21 @@ function Inventory() {
   return (
     <>
       <div className="innercontent">
-        <MDBContainer>
+        <div className="heading">
+          <h1>{currentUser && currentUser.displayName}'s Inventory </h1>
+        </div>
+        {/* <MDBContainer>
           <MDBRow>
-            <div className="heading">
-              <h1>{currentUser && currentUser.displayName}'s Inventory </h1>
-            </div>
+
           </MDBRow>
           <MDBRow className="mb-4 mt-4">
-            {/* <Button className="w-25">
+            <Button className="w-25">
               Add Item <BiAddToQueue />
-            </Button> */}
+            </Button> 
 
-            {/* <Button className="w-25 ms-3">
+            <Button className="w-25 ms-3">
               Preview Vendor <VscOpenPreview />
-            </Button> */}
+            </Button>
 
             <UploadForm />
           </MDBRow>
@@ -70,7 +64,7 @@ function Inventory() {
               </MDBTableBody>
             </MDBTable>
           </MDBRow>
-        </MDBContainer>
+        </MDBContainer> */}
       </div>
     </>
   );

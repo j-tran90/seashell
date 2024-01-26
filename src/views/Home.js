@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBBtn } from "mdb-react-ui-kit";
+
 import { useAuth } from "../contexts/AuthContext";
 import Wave from "../components/Wave";
 
@@ -10,16 +10,15 @@ export default function Home() {
   return (
     <>
       <div className="centered">
-        <MDBContainer>
-          <MDBRow>
-            <div className="text-animation text-center">Welcome</div>
-          </MDBRow>
+        <div className="text-animation text-center">Welcome</div>
+        {/* <MDBContainer>
+          <MDBRow></MDBRow>
           <MDBRow className="text-center">
             <Link to="/register">
               {!currentUser ? <MDBBtn className="w-50">Sign Up</MDBBtn> : ""}
             </Link>
           </MDBRow>
-        </MDBContainer>
+        </MDBContainer> */}
       </div>
       <Wave />
     </>

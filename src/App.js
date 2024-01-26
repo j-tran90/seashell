@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "mdb-react-ui-kit/dist/css/mdb.min.css";
+//import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "./stylesheets/animation/Text.scss";
 import "./stylesheets/animation/Wave.css";
 import "./stylesheets/Index.css";

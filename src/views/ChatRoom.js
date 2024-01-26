@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import ChatMessage from "../components/ChatMessage";
-import { MDBBtn, MDBContainer, MDBRow } from "mdb-react-ui-kit";
+
 import { auth, firestore } from "../config/Firebase";
 import firebase from "firebase/compat/app";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -31,8 +31,10 @@ export default function ChatRoom() {
 
   return (
     <>
-      <MDBContainer>
-        <h1 className="heading">Chat Room</h1>
+      {" "}
+      <h1 className="heading">Chat Room</h1>
+      {/* <MDBContainer>
+
         <hr />
         <MDBRow>
           <main className="chat-main">
@@ -55,7 +57,7 @@ export default function ChatRoom() {
             </MDBBtn>
           </form>
         </MDBRow>
-      </MDBContainer>
+      </MDBContainer> */}
     </>
   );
 }

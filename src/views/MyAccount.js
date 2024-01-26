@@ -3,13 +3,7 @@ import React, { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { Accordion, Form, Button } from "react-bootstrap";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBInput,
-  MDBCard,
-  MDBCardBody,
-} from "mdb-react-ui-kit";
+
 import { FaEdit } from "react-icons/fa";
 
 export default function MyAccount() {
@@ -35,10 +29,12 @@ export default function MyAccount() {
   return (
     <>
       <div className="innercontent">
-        <MDBContainer>
+        {" "}
+        <h1>My Account </h1>
+        {/* <MDBContainer>
           <MDBRow>
             <div className="heading">
-              <h1>My Account </h1>
+
             </div>
           </MDBRow>
           <MDBContainer className="">
@@ -137,7 +133,7 @@ export default function MyAccount() {
               </Button>
             </MDBContainer>
           </MDBContainer>
-        </MDBContainer>
+        </MDBContainer> */}
       </div>
     </>
   );

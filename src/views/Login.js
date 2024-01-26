@@ -1,12 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBInput,
-  MDBBtn,
-  MDBCol,
-  MDBCheckbox,
-} from "mdb-react-ui-kit";
+
 import { RiShieldUserLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
@@ -38,7 +31,7 @@ const Login = () => {
   return (
     <>
       <div className="loginForm centered">
-        <MDBContainer>
+        {/* <MDBContainer>
           <MDBRow>
             <Form onSubmit={handleSubmit}>
               <p className="text-center">
@@ -80,26 +73,26 @@ const Login = () => {
                   <a href="#!">Forgot password?</a>
                 </MDBCol>
               </MDBRow>
-            </Form>
-            <hr className="mt-4" style={{ maxWidth: "480px" }} />
-            <div className="text-center">
-              <FcGoogle
-                type="button"
-                onClick={googleLogin}
-                style={{ fontSize: "40px" }}
-              />
-            </div>
-            <hr className="mt-4" style={{ maxWidth: "480px" }} />
-            <div className="text-center mt-2">
-              Don't have an account?
-              <div>
-                <Link as={Link} to="/register">
-                  Register
-                </Link>
-              </div>
-            </div>
-          </MDBRow>
-        </MDBContainer>
+            </Form> */}
+        <hr className="mt-4" style={{ maxWidth: "480px" }} />
+        <div className="text-center">
+          <FcGoogle
+            type="button"
+            onClick={googleLogin}
+            style={{ fontSize: "40px" }}
+          />
+        </div>
+        <hr className="mt-4" style={{ maxWidth: "480px" }} />
+        <div className="text-center mt-2">
+          Don't have an account?
+          <div>
+            <Link as={Link} to="/register">
+              Register
+            </Link>
+          </div>
+        </div>
+        {/* </MDBRow>
+        </MDBContainer> */}
         <>
           <Wave />
         </>
