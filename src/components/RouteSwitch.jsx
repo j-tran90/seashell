@@ -7,6 +7,7 @@ import Cart from "../views/Cart";
 import Register from "../views/Register";
 import Login from "../views/Login";
 import MyAccount from "../views/MyAccount";
+import Dashboard from "../views/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import ChatRoom from "../views/ChatRoom";
 import Upload from "../views/Upload";
@@ -22,7 +23,7 @@ const RouteSwitch = () => {
           {!currentUser ? (
             <Route path="/login" element={<Login />} />
           ) : (
-            <Route path="/login" element={<MyAccount />} />
+            <Route path="/login" element={<Dashboard />} />
           )}
           {!currentUser ? (
             <Route path="/register" element={<Register />} />
@@ -64,6 +65,14 @@ const RouteSwitch = () => {
             }
           />
           <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
             path="/upload"
             element={
               <PrivateRoute>
@@ -72,7 +81,12 @@ const RouteSwitch = () => {
             }
           />
 
-          <Route path="*" element={<h1>404 Not Found!</h1>} />
+          <Route
+            path="*"
+            element={
+              <div className="container display-1 centered">404 Not Found!</div>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>

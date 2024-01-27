@@ -1,6 +1,6 @@
 .logo {
   font-size: 40px;
-  font-family: lobster, cursive;
+  /* font-family: lobster, cursive; */
 }
 
 a.logo.navbar-brand {
@@ -22,12 +22,12 @@ a.logo.navbar-brand:visited {
 
 button.btn.btn-primary {
   background-color: #2bbbad;
-  outline: none;
+  outline: 0;
 }
 
 button.btn.btn-link {
   color: #2bbbad;
-  outline: none;
+  outline: 0;
 }
 
 button.btn.btn-link:hover {
@@ -40,8 +40,8 @@ button.btn.btn-link:hover {
 }
 
 .card {
-  background-color: #6bb4ad;
-  color: white;
+  padding: 10px;
+  border: 1px solid grey;
 }
 
 .progress-bar {
@@ -68,11 +68,8 @@ button.btn.btn-link:hover {
     align-items: center;
   }
 
-  .heading {
-    padding-top: 25px;
-  }
-
   .loginForm {
+    margin-top: 20vh;
     margin-right: auto;
     margin-left: auto;
     max-width: 480px;
@@ -99,8 +96,13 @@ button.btn.btn-link:hover {
     padding-right: 25px;
   }
 
-  .heading {
-    padding-top: 25px;
+  .loginForm {
+    margin-top: 5vh;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 480px;
+    justify-content: left;
+    align-items: center;
   }
 
   .logo {

@@ -9,9 +9,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="">
-        <div className="text-animation text-center display-1">Hello</div>
-      </div>
+      <div className="text-animation text-center display-1">Hello</div>
+
       <div className="text-center">
         <Link to="/register">
           {!currentUser ? (

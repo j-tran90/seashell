@@ -4,6 +4,15 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .chat-main {
+    border-radius: 10px;
+    border: 1px solid #2bbbad;
+  }
 }
 
 main::-webkit-scrollbar {
@@ -19,36 +28,35 @@ main::-webkit-scrollbar-thumb {
 }
 
 .chat-form {
-  height: 10vh;
-  width: 80%;
   position: fixed;
   bottom: 0px;
-  display: flex;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 0 0 20px 0;
+  background-color: #cacaca;
 }
 
 .chat-input {
-  margin: 90px;
   line-height: 1.5;
   height: 5vh;
-  width: 150%;
+  width: 80%;
   font-size: 1.5rem;
   background: #fff;
   color: #000;
   outline: none;
-  border: none;
-  border-radius: 5px 0 0 5px;
+  border: 1px solid #2bbbad;
   padding: 0 10px;
 }
 
 .chat-button {
-  margin: -90px;
+  font-size: 20px;
+  margin-left: 5px;
   height: 5vh;
-  width: 20%;
-  border-radius: 0 5px 5px 0;
+  width: 17%;
+  padding: 0;
 }
-button:disabled {
-  opacity: 0.5;
+
+.chat-button:disabled {
+  opacity: 0;
   cursor: not-allowed;
 }
 
@@ -62,11 +70,13 @@ p {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
-  border-radius: 15px;
+  padding: 2px 15px;
+  border-radius: 11px;
   position: relative;
   color: white;
   text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .message {
@@ -92,41 +102,5 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin: 2px 5px;
-}
-
-@media only screen and (max-width: 600px) {
-  .innercontent {
-    padding: 10px;
-  }
-
-  .chat-main {
-    max-height: 70vh;
-    margin: 0;
-  }
-  .chat-form {
-    margin: 0;
-    height: 10vh;
-    width: 95%;
-  }
-  .chat-input {
-    margin: 0;
-    line-height: 1.5;
-    height: 7vh;
-    width: 100%;
-    font-size: 1.5rem;
-    background: #fff;
-    color: #000;
-    outline: none;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    padding: 0 10px;
-  }
-
-  .chat-button {
-    margin: 0;
-    height: 7vh;
-    width: 25%;
-    border-radius: 0 5px 5px 0;
-  }
+  margin-bottom: 12px;
 }

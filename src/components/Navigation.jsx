@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { FaUserCircle, FaModx } from "react-icons/fa";
+import { GiPalmTree } from "react-icons/gi";
 import { useAuth } from "../contexts/AuthContext";
 
 function Navigation() {
@@ -26,7 +27,7 @@ function Navigation() {
       <Navbar collapseOnSelect expand="lg" bg="white">
         <Container>
           <Navbar.Brand className="logo" as={Link} to="/">
-            <FaModx /> SeaShell
+            <GiPalmTree /> SeaShell
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -43,15 +44,17 @@ function Navigation() {
                   Chat Room
                 </Nav.Link>
               )}
+              <Nav.Link as={Link} to="/dashboard">
+                Dashboard
+              </Nav.Link>
             </Nav>
-            <hr />
             <NavDropdown
               title={
                 <>
                   {!currentUser ? (
                     <FaUserCircle style={{ fontSize: "40px" }} />
                   ) : (
-                    <img src={currentUser.photoURL} />
+                    <img src={currentUser.photoURL} alt="..." />
                   )}
 
                   {currentUser && currentUser.displayName}
@@ -64,7 +67,7 @@ function Navigation() {
                   <NavDropdown.Item as={Link} to="/myaccount">
                     My Account
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/inventory">
+                  <NavDropdown.Item as={Link} to="/inventory" hidden>
                     Inventory
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
