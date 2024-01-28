@@ -65,13 +65,13 @@ export default function MyAccount() {
                         <Row>
                           <input
                             className="mt-3"
-                            id="password"
+                            id="password-current"
                             label="Current Password"
                             placeholder="Current Password"
                             icon="lock"
-                            group
+                            group="true"
                             type="password"
-                            inputRef={passwordRef}
+                            ref={passwordRef}
                             required
                             style={{ margin: "auto" }}
                           />
@@ -79,13 +79,13 @@ export default function MyAccount() {
                         <Row>
                           <input
                             className="mt-3 "
-                            id="password"
+                            id="password-new"
                             label="New Password"
                             placeholder="New Password"
                             icon="lock"
-                            group
+                            group="true"
                             type="password"
-                            inputRef={passwordRef}
+                            ref={passwordRef}
                             required
                             style={{ margin: "auto" }}
                           />
@@ -97,9 +97,9 @@ export default function MyAccount() {
                             label="Confirm New Password"
                             placeholder="Confirm New Password"
                             icon="lock"
-                            group
+                            group="true"
                             type="password"
-                            inputRef={passwordConfirmRef}
+                            ref={passwordConfirmRef}
                             required
                             style={{ margin: "auto" }}
                           />
@@ -140,11 +140,7 @@ export default function MyAccount() {
                     <Accordion.Header>Settings</Accordion.Header>
                     <Accordion.Body>
                       <Container className="text-center">
-                        <Button
-                          className=""
-                          variant="danger"
-                          onClick={deleteAccount}
-                        >
+                        <Button variant="danger" onClick={deleteAccount}>
                           Delete
                         </Button>
                       </Container>

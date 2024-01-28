@@ -7,7 +7,6 @@ import Cart from "../views/Cart";
 import Register from "../views/Register";
 import Login from "../views/Login";
 import MyAccount from "../views/MyAccount";
-import Dashboard from "../views/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import ChatRoom from "../views/ChatRoom";
 import Upload from "../views/Upload";
@@ -23,7 +22,7 @@ const RouteSwitch = () => {
           {!currentUser ? (
             <Route path="/login" element={<Login />} />
           ) : (
-            <Route path="/login" element={<Dashboard />} />
+            <Route path="/login" element={<ChatRoom />} />
           )}
           {!currentUser ? (
             <Route path="/register" element={<Register />} />
@@ -61,14 +60,6 @@ const RouteSwitch = () => {
             element={
               <PrivateRoute>
                 <ChatRoom />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <Dashboard />
               </PrivateRoute>
             }
           />

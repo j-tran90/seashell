@@ -50,9 +50,9 @@ export default function Register() {
                   label="Enter Name"
                   placeholder="Enter Name"
                   icon="envelope"
-                  group
+                  group="true"
                   type="name"
-                  inputRef={nameRef}
+                  ref={nameRef}
                   required
                   style={{ border: "1px solid #2bbbad" }}
                 />
@@ -65,9 +65,9 @@ export default function Register() {
                   label="Enter Email"
                   placeholder="Enter Email"
                   icon="envelope"
-                  group
+                  group="true"
                   type="email"
-                  inputRef={emailRef}
+                  ref={emailRef}
                   required
                   style={{ border: "1px solid #2bbbad" }}
                 />
@@ -79,9 +79,9 @@ export default function Register() {
                   label="Choose Password"
                   placeholder="Choose Password"
                   icon="lock"
-                  group
+                  group="true"
                   type="password"
-                  inputRef={passwordRef}
+                  ref={passwordRef}
                   required
                   style={{ border: "1px solid #2bbbad" }}
                 />
@@ -94,9 +94,9 @@ export default function Register() {
                   label="Confirm Password"
                   placeholder="Confirm Password"
                   icon="lock"
-                  group
+                  group="true"
                   type="password"
-                  inputRef={passwordConfirmRef}
+                  ref={passwordConfirmRef}
                   required
                   style={{ border: "1px solid #2bbbad" }}
                 />

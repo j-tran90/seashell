@@ -43,9 +43,9 @@ const Login = () => {
                   label="Email"
                   placeholder="Email"
                   icon="lock"
-                  group
+                  group="true"
                   type="email"
-                  inputRef={emailRef}
+                  ref={emailRef}
                   required
                   style={{ border: "1px solid #2bbbad" }}
                 />
@@ -57,9 +57,9 @@ const Login = () => {
                   label="Password"
                   placeholder="Password"
                   icon="lock"
-                  group
+                  group="true"
                   type="password"
-                  inputRef={passwordRef}
+                  ref={passwordRef}
                   required
                   style={{ border: "1px solid #2bbbad" }}
                 />

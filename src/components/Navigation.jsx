@@ -41,12 +41,9 @@ function Navigation() {
               </Nav.Link>
               {!currentUser ? null : (
                 <Nav.Link as={Link} to="/chatroom">
-                  Chat Room
+                  Chat
                 </Nav.Link>
               )}
-              <Nav.Link as={Link} to="/dashboard">
-                Dashboard
-              </Nav.Link>
             </Nav>
             <NavDropdown
               title={
