@@ -27,41 +27,44 @@ export default function ChatRoom() {
     });
 
     setFormValue("");
-    this.dummy.current.scrollIntoView({ behavior: "smooth" });
+    dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
       <Container>
-        <div className="display-1">Chat</div>
-        <Row>
-          <main className="chat-main">
-            {messages &&
-              messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+        <Col>
+          <Row>
+            <main className="chat-main">
+              {messages &&
+                messages.map((msg) => (
+                  <ChatMessage key={msg.id} message={msg} />
+                ))}
 
-            <div ref={dummy}></div>
-          </main>
-        </Row>
+              <div ref={dummy}></div>
+            </main>
+          </Row>
 
-        <Row className="mt-4 chat-form container">
-          <Form onSubmit={sendMessage} className="">
-            <Col>
-              <input
-                className="chat-input"
-                value={formValue}
-                onChange={(e) => setFormValue(e.target.value)}
-                placeholder="Enter Message"
-              />
-              <Button
-                type="submit"
-                disabled={!formValue}
-                className="chat-button"
-              >
-                <IoIosSend />
-              </Button>
-            </Col>
-          </Form>
-        </Row>
+          <Row className="mt-4 chat-form container">
+            <Form onSubmit={sendMessage} className="">
+              <Col>
+                <input
+                  className="chat-input"
+                  value={formValue}
+                  onChange={(e) => setFormValue(e.target.value)}
+                  placeholder="Enter Message"
+                />
+                <Button
+                  type="submit"
+                  disabled={!formValue}
+                  className="chat-button"
+                >
+                  <IoIosSend />
+                </Button>
+              </Col>
+            </Form>
+          </Row>
+        </Col>
       </Container>
     </>
   );

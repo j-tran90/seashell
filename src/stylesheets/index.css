@@ -2,6 +2,16 @@ body * {
   font-family: "Roboto Flex", sans-serif;
 }
 
+body {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 254, 234, 1) 35%,
+    #b7e8eb 100%
+  );
+  overflow: hidden;
+}
+
 * {
   border: 0px solid red;
 }

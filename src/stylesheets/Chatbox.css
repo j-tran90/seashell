@@ -1,10 +1,10 @@
 .chat-main {
-  max-height: 75vh;
+  height: 80vh;
   margin: 0 0 10vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #0f3632;
   padding-top: 20px;
 }
 
