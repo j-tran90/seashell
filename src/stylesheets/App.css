@@ -109,6 +109,10 @@ button.btn.btn-link:hover {
     font-size: 30px;
   }
 
+  .logo-text {
+    display: none;
+  }
+
   .userShield {
     font-size: 150px;
   }

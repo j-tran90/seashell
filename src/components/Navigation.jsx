@@ -1,7 +1,15 @@
 /*eslint-disable no-unused-vars*/
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import {
+  Container,
+  Nav,
+  Navbar,
+  NavDropdown,
+  Offcanvas,
+  Form,
+  Button,
+} from "react-bootstrap";
 import { FaUserCircle, FaModx } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
 import { useAuth } from "../contexts/AuthContext";
@@ -24,27 +32,50 @@ function Navigation() {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="white">
-        <Container>
-          <Navbar.Brand className="logo" as={Link} to="/">
-            <GiPalmTree /> SeaShell
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto"></Nav>
-            <Nav>
-              <Nav.Link as={Link} to="/shop" hidden>
-                Browse Shop
-              </Nav.Link>
-              <Nav.Link as={Link} to="/cart" hidden>
-                Cart
-              </Nav.Link>
-              {!currentUser ? null : (
-                <Nav.Link as={Link} to="/chatroom">
-                  Chat
-                </Nav.Link>
-              )}
-            </Nav>
+      {["md"].map((expand) => (
+        <Navbar key={expand} expand={expand} className="bg-body-tertiary">
+          <Container>
+            <Navbar.Brand className="logo" as={Link} to="/">
+              <GiPalmTree /> <span className="logo-text">SeaShell</span>
+            </Navbar.Brand>
+            <Navbar.Toggle
+              className="me-auto"
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+            />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="start"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title
+                  className="logo"
+                  id={`offcanvasNavbarLabel-expand-${expand}`}
+                >
+                  <GiPalmTree /> SeaShell
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Nav.Link as={Link} to="/shop" hidden>
+                    Browse Shop
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/cart" hidden>
+                    Cart
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/chatroom">
+                    Chat
+                  </Nav.Link>
+
+                  {/* FOR PRODUCTION */}
+                  {/* {!currentUser ? null : (
+                    <Nav.Link as={Link} to="/chatroom">
+                      Chat
+                    </Nav.Link>
+                  )} */}
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
             <NavDropdown
               title={
                 <>
@@ -83,9 +114,9 @@ function Navigation() {
                 )}
               </NavDropdown.Item>
             </NavDropdown>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+          </Container>
+        </Navbar>
+      ))}
     </>
   );
 }
